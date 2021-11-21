@@ -1,0 +1,1 @@
+RUN npm install @edx/brand@git+https://git@github.com/Dicey-Tech/brand-diceytech.git

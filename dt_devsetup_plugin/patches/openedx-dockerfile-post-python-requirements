@@ -1,0 +1,2 @@
+RUN pip install xblock-problem-builder
+RUN pip install git+https://github.com/open-craft/xblock-activetable.git

@@ -1,0 +1,8 @@
+TIME_ZONE = "Europe/London"
+COURSE_MODE_DEFAULTS = {'bulk_sku': None, 'currency':'gbp','description': None, 'expiration_datetime': None, 'min_price': 0, 'name':'Honor', 'sku': 'None', 'slug': 'honor', 'suggested_prices': ''}
+
+################# Settings for brand logos. #################
+LOGO_URL = "https://github.com/Dicey-Tech/brand-diceytech/raw/master/logo.svg"
+LOGO_URL_PNG = "https://3ducate-marketing.s3-eu-west-1.amazonaws.com/Dicey_Tech_Make_and_Learn.png"
+LOGO_TRADEMARK_URL = "https://github.com/Dicey-Tech/brand-diceytech/raw/master/logo-trademark.svg"
+FAVICON_URL = "https://github.com/Dicey-Tech/brand-diceytech/raw/master/favicon.ico"  
