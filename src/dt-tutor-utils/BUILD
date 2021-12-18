@@ -12,3 +12,5 @@ python_distribution(
         entry_points={"tutor.plugin.v0": ["dt_utils = tutorutils.plugin"]},
     ),
 )
+
+# TODO Add tutor dependency

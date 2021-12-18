@@ -1,0 +1,7 @@
+dt_classroom-job:
+  image: {{ DT_CLASSROOM_DOCKER_IMAGE }}
+  environment:
+    DJANGO_SETTINGS_MODULE: classrooms.settings.tutor.production
+  volumes:
+    - ../plugins/dt_classroom/apps/settings/tutor:/openedx/dt-classroom/classrooms/settings/tutor:ro
+  depends_on: {{ [("lms", RUN_LMS), ("mysql", RUN_MYSQL)]|list_if }}
