@@ -1,2 +1,0 @@
-recursive-include dt_devsetup_plugin/patches *
-recursive-include dt_devsetup_plugin/templates *

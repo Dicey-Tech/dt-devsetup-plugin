@@ -5,3 +5,9 @@ __pycache__
 *.egg-info/
 /build/
 /dist/
+
+# Pants workspace files
+/.pants.d/
+/dist/
+/.pids
+/.pants.workdir.file_lock*

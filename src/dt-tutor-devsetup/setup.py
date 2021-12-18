@@ -13,7 +13,7 @@ def load_readme():
 def load_about():
     about = {}
     with io.open(
-        os.path.join(HERE, "dt_devsetup_plugin", "__about__.py"),
+        os.path.join(HERE, "tutordevsetup", "__about__.py"),
         "rt",
         encoding="utf-8",
     ) as f:
@@ -25,7 +25,7 @@ ABOUT = load_about()
 
 
 setup(
-    name="dt_devsetup_plugin",
+    name="dt_tutor_devsetup",
     version=ABOUT["__version__"],
     url="https://github.com/Dicey-Tech/dt-devsetup-plugin",
     project_urls={
@@ -40,11 +40,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.5",
     install_requires=["tutor"],
-    entry_points={
-        "tutor.plugin.v0": [
-            "dt-devsetup-plugin = dt_devsetup_plugin.plugin"
-        ]
-    },
+    entry_points={"tutor.plugin.v0": ["dt_devsetup = tutordevsetup.plugin"]},
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
