@@ -1,4 +1,4 @@
-dt_classroom:
+dt_learninghub:
   environment:
     DJANGO_SETTINGS_MODULE: classrooms.settings.tutor.development
   command: python3 manage.py runserver 0.0.0.0:8180
@@ -8,4 +8,4 @@ dt_classroom:
   networks:
     default:
       aliases:
-        - "{{ DT_CLASSROOM_HOST }}"
+        - "{{ DT_LEARNINGHUB_HOST }}"

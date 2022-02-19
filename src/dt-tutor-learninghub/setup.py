@@ -13,7 +13,7 @@ def load_readme():
 def load_about():
     about = {}
     with io.open(
-        os.path.join(HERE, "classroom_plugin", "__about__.py"),
+        os.path.join(HERE, "tutorlearninghub", "__about__.py"),
         "rt",
         encoding="utf-8",
     ) as f:

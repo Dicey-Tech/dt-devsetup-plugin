@@ -1,10 +1,10 @@
-# Classroom service
-upstream dt_classroom-backend {
-    server dt_classroom:8000 fail_timeout=0;
+# Learninghub service
+upstream dt_learninghub-backend {
+    server dt_learninghub:8000 fail_timeout=0;
 }
 server {
   listen 80;
-  server_name {{ DT_CLASSROOM_HOST }};
+  server_name {{ DT_LEARNINGHUB_HOST }};
 
   # Disables server version feedback on pages and in headers
   server_tokens off;
@@ -14,6 +14,6 @@ server {
   location / {
     proxy_set_header Host $http_host;
     proxy_redirect off;
-    proxy_pass http://dt_classroom-backend;
+    proxy_pass http://dt_learninghub-backend;
   }
 }

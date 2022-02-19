@@ -8,9 +8,9 @@
 # Development client
 ./manage.py lms create_dot_application \
     --grant-type client-credentials \
-    --redirect-uris "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DT_CLASSROOM_HOST }}:8180/complete/edx-oauth2/" \
-    --client-id {{ DT_CLASSROOM_OAUTH2_KEY_DEV }} \
-    --client-secret {{ DT_CLASSROOM_OAUTH2_SECRET }} \
+    --redirect-uris "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DT_LEARNINGHUB_HOST }}:8180/complete/edx-oauth2/" \
+    --client-id {{ DT_LEARNINGHUB_OAUTH2_KEY_DEV }} \
+    --client-secret {{ DT_LEARNINGHUB_OAUTH2_SECRET }} \
     --scopes "user_id,email,profile" \
     --skip-authorization \
     --update \
@@ -18,9 +18,9 @@
     classroom
 ./manage.py lms create_dot_application \
     --grant-type authorization-code \
-    --redirect-uris "http://{{ DT_CLASSROOM_HOST }}:8180/complete/edx-oauth2/" \
-    --client-id {{ DT_CLASSROOM_OAUTH2_KEY_SSO_DEV }} \
-    --client-secret {{ DT_CLASSROOM_OAUTH2_SECRET_SSO }} \
+    --redirect-uris "http://{{ DT_LEARNINGHUB_HOST }}:8180/complete/edx-oauth2/" \
+    --client-id {{ DT_LEARNINGHUB_OAUTH2_KEY_SSO_DEV }} \
+    --client-secret {{ DT_LEARNINGHUB_OAUTH2_SECRET_SSO }} \
     --scopes "user_id,email,profile" \
     --skip-authorization \
     --update \
@@ -30,9 +30,9 @@
 # Production client
 ./manage.py lms create_dot_application \
     --grant-type client-credentials \
-    --redirect-uris "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DT_CLASSROOM_HOST }}/complete/edx-oauth2/" \
-    --client-id {{ DT_CLASSROOM_OAUTH2_KEY }} \
-    --client-secret {{ DT_CLASSROOM_OAUTH2_SECRET }} \
+    --redirect-uris "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DT_LEARNINGHUB_HOST }}/complete/edx-oauth2/" \
+    --client-id {{ DT_LEARNINGHUB_OAUTH2_KEY }} \
+    --client-secret {{ DT_LEARNINGHUB_OAUTH2_SECRET }} \
     --scopes "user_id,email,profile" \
     --skip-authorization \
     --update \
@@ -40,9 +40,9 @@
     classroom
 ./manage.py lms create_dot_application \
     --grant-type authorization-code \
-    --redirect-uris "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DT_CLASSROOM_HOST }}/complete/edx-oauth2/" \
-    --client-id {{ DT_CLASSROOM_OAUTH2_KEY_SSO }} \
-    --client-secret {{ DT_CLASSROOM_OAUTH2_SECRET_SSO }} \
+    --redirect-uris "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DT_LEARNINGHUB_HOST }}/complete/edx-oauth2/" \
+    --client-id {{ DT_LEARNINGHUB_OAUTH2_KEY_SSO }} \
+    --client-secret {{ DT_LEARNINGHUB_OAUTH2_SECRET_SSO }} \
     --scopes "user_id,email,profile" \
     --skip-authorization \
     --update \

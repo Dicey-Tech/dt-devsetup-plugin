@@ -28,7 +28,7 @@ RUN pip3 install -r requirements/production.txt
 # Install uwsgi
 RUN pip install uwsgi==2.0.19.1
 
-{{ patch("dt-classroom-dockerfile-post-python-requirements") }}
+{{ patch("dt-learninghub-dockerfile-post-python-requirements") }}
 
 RUN python manage.py collectstatic --noinput
 

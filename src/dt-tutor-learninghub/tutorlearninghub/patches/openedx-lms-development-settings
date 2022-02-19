@@ -1,1 +1,0 @@
-ENTERPRISE_API_URL = "http://{{ LMS_HOST }}:8000/enterprise/api/v1/"

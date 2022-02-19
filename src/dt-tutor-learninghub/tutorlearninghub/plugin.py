@@ -4,7 +4,7 @@ import pkg_resources
 
 from .__about__ import __version__
 
-templates = pkg_resources.resource_filename("classroom_plugin", "templates")
+templates = pkg_resources.resource_filename("tutorlearninghub", "templates")
 
 config = {
     "add": {
@@ -15,20 +15,20 @@ config = {
     },
     "defaults": {
         "VERSION": __version__,
-        "DOCKER_IMAGE": "{{ DOCKER_REGISTRY }}diceytech/dt-classroom:{{ DT_CLASSROOM_VERSION }}",
-        "HOST": "classroom.{{ LMS_HOST }}",
+        "DOCKER_IMAGE": "{{ DOCKER_REGISTRY }}diceytech/dt-learninghub:{{ DT_LEARNINGHUB_VERSION }}",
+        "HOST": "learninghub.{{ LMS_HOST }}",
         "MYSQL_DATABASE": "classroom",
         "MYSQL_USERNAME": "classroom",
-        "OAUTH2_KEY": "classroom",
-        "OAUTH2_KEY_DEV": "classroom-dev",
-        "OAUTH2_KEY_SSO": "classroom-sso",
-        "OAUTH2_KEY_SSO_DEV": "classroom-sso-dev",
+        "OAUTH2_KEY": "learninghub",
+        "OAUTH2_KEY_DEV": "learninghub-dev",
+        "OAUTH2_KEY_SSO": "learninghub-sso",
+        "OAUTH2_KEY_SSO_DEV": "learninghub-sso-dev",
         "CACHE_REDIS_DB": "{{ OPENEDX_CACHE_REDIS_DB }}",
         "MFE_APP": {
             "name": "classroom",
             "repository": "https://github.com/Dicey-Tech/frontend-app-classroom",
             "port": 8080,
-            "version": "main",
+            "version": "master",
         },
         "DASHBOARD_MFE_APP": {
             "name": "dasbhoard",
@@ -37,12 +37,12 @@ config = {
             "version": "develop",
             "env": {
                 "production": {
-                    "CLASSROOM_BASE_URL": "{{ DT_CLASSROOM_HOST }}",
-                    "CLASSROOM_MFE_URL": "apps.{{ LMS_HOST }}/{{ DT_CLASSROOM_MFE_APP['name'] }}",
+                    "CLASSROOM_BASE_URL": "{{ DT_LEARNINGHUB_HOST }}",
+                    "CLASSROOM_MFE_URL": "apps.{{ LMS_HOST }}/{{ DT_LEARNINGHUB_MFE_APP['name'] }}",
                 },
                 "development": {
-                    "CLASSROOM_BASE_URL": "{{ DT_CLASSROOM_HOST }}:8180",
-                    "CLASSROOM_MFE_URL": "apps.{{ LMS_HOST }}:{{ DT_CLASSROOM_MFE_APP['port'] }}/{{ DT_CLASSROOM_MFE_APP['name'] }}",
+                    "CLASSROOM_BASE_URL": "{{ DT_LEARNINGHUB_HOST }}:8180",
+                    "CLASSROOM_MFE_URL": "apps.{{ LMS_HOST }}:{{ DT_LEARNINGHUB_MFE_APP['port'] }}/{{ DT_LEARNINGHUB_MFE_APP['name'] }}",
                 },
             },
         },
@@ -50,14 +50,14 @@ config = {
 }
 
 hooks = {
-    "build-image": {"dt_classroom": "{{ DT_CLASSROOM_DOCKER_IMAGE }}"},
-    "init": ["mysql", "dt_classroom", "lms"],
+    "build-image": {"dt_learninghub": "{{ DT_LEARNINGHUB_DOCKER_IMAGE }}"},
+    "init": ["mysql", "dt_learninghub", "lms"],
 }
 
 
 def patches():
     all_patches = {}
-    patches_dir = pkg_resources.resource_filename("classroom_plugin", "patches")
+    patches_dir = pkg_resources.resource_filename("tutorlearninghub", "patches")
     for path in glob(os.path.join(patches_dir, "*")):
         with open(path) as patch_file:
             name = os.path.basename(path)

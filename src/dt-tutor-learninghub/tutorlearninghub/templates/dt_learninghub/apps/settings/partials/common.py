@@ -1,7 +1,7 @@
-SECRET_KEY = "{{ DT_CLASSROOM_SECRET_KEY }}"
+SECRET_KEY = "{{ DT_LEARNINGHUB_SECRET_KEY }}"
 ALLOWED_HOSTS = [
     "classroom",
-    "{{ DT_CLASSROOM_HOST }}",
+    "{{ DT_LEARNINGHUB_HOST }}",
     "{{ LMS_HOST }}",
     "{{ MFE_HOST }}"
 ]
@@ -11,9 +11,9 @@ PLATFORM_NAME = "{{ PLATFORM_NAME }}"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "{{ DT_CLASSROOM_MYSQL_DATABASE }}",
-        "USER": "{{ DT_CLASSROOM_MYSQL_USERNAME }}",
-        "PASSWORD": "{{ DT_CLASSROOM_MYSQL_PASSWORD }}",
+        "NAME": "{{ DT_LEARNINGHUB_MYSQL_DATABASE }}",
+        "USER": "{{ DT_LEARNINGHUB_MYSQL_USERNAME }}",
+        "PASSWORD": "{{ DT_LEARNINGHUB_MYSQL_PASSWORD }}",
         "HOST": "{{ MYSQL_HOST }}",
         "PORT": "{{ MYSQL_PORT }}",
         "OPTIONS": {
@@ -26,7 +26,7 @@ CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "KEY_PREFIX": "classroon",
-        "LOCATION": "redis://{% if REDIS_USERNAME and REDIS_PASSWORD %}{{ REDIS_USERNAME }}:{{ REDIS_PASSWORD }}{% endif %}@{{ REDIS_HOST }}:{{ REDIS_PORT }}/{{ DT_CLASSROOM_CACHE_REDIS_DB }}",
+        "LOCATION": "redis://{% if REDIS_USERNAME and REDIS_PASSWORD %}{{ REDIS_USERNAME }}:{{ REDIS_PASSWORD }}{% endif %}@{{ REDIS_HOST }}:{{ REDIS_PORT }}/{{ DT_LEARNINGHUB_CACHE_REDIS_DB }}",
     }
 }
 
