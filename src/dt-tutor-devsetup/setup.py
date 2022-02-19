@@ -27,11 +27,6 @@ ABOUT = load_about()
 setup(
     name="dt_tutor_devsetup",
     version=ABOUT["__version__"],
-    url="https://github.com/Dicey-Tech/dt-devsetup-plugin",
-    project_urls={
-        "Code": "https://github.com/Dicey-Tech/dt-devsetup-plugin",
-        "Issue tracker": "https://github.com/Dicey-Tech/dt-devsetup-plugin/issues",
-    },
     license="AGPLv3",
     author="Sofiane Bebert",
     description="dt-devsetup-plugin plugin for Tutor",
