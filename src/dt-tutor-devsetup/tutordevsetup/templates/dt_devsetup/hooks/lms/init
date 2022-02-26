@@ -1,0 +1,5 @@
+{% if DT_DEVSETUP_AUTHN_MFE_APP %}
+(./manage.py lms waffle_flag --list | grep user_authn.redirect_to_microfrontend) || ./manage.py lms waffle_flag --create --everyone user_authn.redirect_to_microfrontend
+{% else %}
+./manage.py lms waffle_delete --flags user_authn.redirect_to_microfrontend
+{% endif %}

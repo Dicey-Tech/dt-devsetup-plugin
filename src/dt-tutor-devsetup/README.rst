@@ -14,6 +14,7 @@ Usage
 ::
 
     tutor plugins enable dt-devsetup-plugin
+    tutor local init -l dt_devsetup
 
 
 License

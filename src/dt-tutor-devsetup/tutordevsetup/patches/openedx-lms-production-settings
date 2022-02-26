@@ -3,3 +3,5 @@ SYSTEM_WIDE_ROLE_CLASSES = SYSTEM_WIDE_ROLE_CLASSES + [
     'system_wide_roles.SystemWideRoleAssignment',
     'enterprise.SystemWideEnterpriseUserRoleAssignment',
 ]
+
+AUTHN_MICROFRONTEND_URL = "{{ "https" if ENABLE_HTTPS else "http" }}://{{ MFE_HOST }}/{{ DT_DEVSETUP_AUTHN_MFE_APP["name"] }}"

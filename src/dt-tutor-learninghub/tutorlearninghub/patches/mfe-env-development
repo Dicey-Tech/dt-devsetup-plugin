@@ -1,2 +1,2 @@
 CLASSROOM_BASE_URL='http://{{ DT_LEARNINGHUB_HOST }}:8180'
-GRADEBOOK_URL='http://{{ MFE_HOST }}:{{ MFE_GRADEBOOK_MFE_APP["port"] }}/gradebook'
+GRADEBOOK_URL='http://{{ MFE_HOST }}:{{ MFE_GRADEBOOK_MFE_APP["port"] }}/ {{ MFE_GRADEBOOK_MFE_APP["name"] }}'

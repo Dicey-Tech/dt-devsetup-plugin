@@ -1,2 +1,4 @@
 ENTERPRISE_API_URL = "http://{{ LMS_HOST }}:8000/enterprise/api/v1/"
 ENTERPRISE_CONSENT_API_URL = "http://{{ LMS_HOST }}:8000/consent/api/v1/"
+
+AUTHN_MICROFRONTEND_URL = "{{ "https" if ENABLE_HTTPS else "http" }}://{{ MFE_HOST }}/{{ DT_DEVSETUP_AUTHN_MFE_APP["name"] }}:{{ DT_DEVSETUP_AUTHN_MFE_APP["port"] }}"

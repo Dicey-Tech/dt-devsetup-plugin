@@ -6,9 +6,29 @@ from .__about__ import __version__
 
 templates = pkg_resources.resource_filename("tutordevsetup", "templates")
 
-config = {}
+config = {
+    "defaults": {
+        "VERSION": __version__,
+        "AUTHN_MFE_APP": {
+            "name": "auth",
+            "port": 1999,
+            "repository": "https://github.com/Dicey-Tech/frontend-app-authn",
+            "version": "develop",
+            "env": {
+                "production": {
+                    "DISABLE_ENTERPRISE_LOGIN": "true",
+                },
+                "development": {
+                    "DISABLE_ENTERPRISE_LOGIN": "true",
+                },
+            },
+        },
+    }
+}
 
-hooks = {}
+hooks = {
+    "init": ["lms"],
+}
 
 
 def patches():
