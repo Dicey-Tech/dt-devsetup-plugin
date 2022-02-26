@@ -17,6 +17,7 @@ FEATURES["ENABLE_THIRD_PARTY_AUTH"] = True
 FEATURES["ORGANIZATIONS_APP"] = True
 FEATURES["ENABLE_PREREQUISITE_COURSES"] = True
 FEATURES["MILESTONES_APP"] = True
+FEATURES["PREVENT_CONCURRENT_LOGINS"] = False
 
 ################# Settings for brand logos. #################
 LOGO_URL = "https://github.com/Dicey-Tech/brand-diceytech/raw/master/logo.svg"
