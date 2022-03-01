@@ -1,4 +1,4 @@
-python_library(
+python_sources(
     name="dt_learninghub",
 )
 
