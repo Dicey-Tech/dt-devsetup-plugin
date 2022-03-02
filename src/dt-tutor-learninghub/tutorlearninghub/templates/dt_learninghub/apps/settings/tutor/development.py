@@ -17,14 +17,13 @@ DISCOVERY_SERVICE_API_URL = "http://{{ DISCOVERY_HOST }}:8381/api/v1/"
 
 CORS_ORIGIN_WHITELIST.append("http://{{ MFE_HOST }}:{{ DT_LEARNINGHUB_MFE_APP['port'] }}")
 CORS_ORIGIN_WHITELIST.append("http://{{ MFE_HOST }}:{{ DT_LEARNINGHUB_DASHBOARD_MFE_APP['port'] }}")
-CORS_ORIGIN_WHITELIST.append("http://{{ MFE_HOST }}:1999")
 
 CSRF_TRUSTED_ORIGINS.append("{{ MFE_HOST }}:{{ DT_LEARNINGHUB_MFE_APP['port'] }}")
 CSRF_TRUSTED_ORIGINS.append("{{ MFE_HOST }}:{{ DT_LEARNINGHUB_DASHBOARD_MFE_APP['port'] }}")
-CSRF_TRUSTED_ORIGINS.append("{{ MFE_HOST }}:1999")
 
-# TODO Remove
-AUTO_AUTH = True
+LMS_BASE_URL = "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ LMS_HOST }}:8000"
+CMS_BASE_URL = "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ CMS_HOST }}:8001"
+DISCOVERY_SERVICE_API_URL = "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DISCOVERY_HOST }}:8381/api/v1/"
 
 SWAGGER_SETTINGS = {
     'DOC_EXPANSION': 'list',

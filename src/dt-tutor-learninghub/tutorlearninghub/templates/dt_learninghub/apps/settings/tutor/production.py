@@ -19,4 +19,8 @@ CORS_ORIGIN_WHITELIST.append("{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ MFE
 
 CSRF_TRUSTED_ORIGINS.append("{{ MFE_HOST }}")
 
+LMS_BASE_URL = "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ LMS_HOST }}/"
+CMS_BASE_URL = "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ CMS_HOST }}/"
+DISCOVERY_SERVICE_API_URL = "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DISCOVERY_HOST }}/api/v1/"
+
 {{ patch("dt-learninghub-production-settings") }}

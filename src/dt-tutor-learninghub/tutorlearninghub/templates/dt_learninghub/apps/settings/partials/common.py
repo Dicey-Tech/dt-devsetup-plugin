@@ -37,11 +37,11 @@ EMAIL_HOST_USER = "{{ SMTP_USERNAME }}"
 EMAIL_HOST_PASSWORD = "{{ SMTP_PASSWORD }}"
 EMAIL_USE_TLS = {{ SMTP_USE_TLS }}
 
-LOGGING["handlers"]["local"] = {
-    "class": "logging.handlers.WatchedFileHandler",
-    "filename": "/var/log/classroom.log",
-    "formatter": "standard",
-}
+# Get rid of the "local" handler
+for logger in LOGGING["loggers"].values():
+    if "local" in logger["handlers"]:
+        logger["handlers"].remove("local")
+# Decrease verbosity of algolia logger
 LOGGING["loggers"]["algoliasearch_django"] = {"level": "WARNING"}
 
 # Generic OAuth2 variables irrespective of SSO/backend service key types.
@@ -78,6 +78,3 @@ EDX_DRF_EXTENSIONS = {
     'OAUTH2_USER_INFO_URL': '{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ LMS_HOST }}/oauth2/user_info',
 }
 
-LMS_BASE_URL = "http://lms:8000/"
-CMS_BASE_URL = "http://cms:8000/"
-DISCOVERY_SERVICE_API_URL = "{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ DISCOVERY_HOST }}/api/v1/"
