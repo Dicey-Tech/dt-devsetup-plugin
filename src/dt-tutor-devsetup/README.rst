@@ -26,13 +26,13 @@ TODO
 Config.yml
 - disable forum
 - use 1 uswgi worker
-- CMS_HOST to studio.overhang.io
 
 Run with: tutor dev exec dt_classroom ./manage.py shell_plus --notebook
 
 Scripts
 - switch outline
 - generate some users
+- Add Third-party authentication -> Provider Configuration (OAuth)
 
 Switch between nightly and release builds (or any defined environment)
 - set the rc file 

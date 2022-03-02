@@ -17,9 +17,10 @@ config = {
             "env": {
                 "production": {
                     "DISABLE_ENTERPRISE_LOGIN": "true",
-                },
-                "development": {
-                    "DISABLE_ENTERPRISE_LOGIN": "true",
+                    "ENABLE_PROGRESSIVE_PROFILING": "true",
+                    "TOS_AND_HONOR_CODE": "https://diceytech.co.uk/terms-and-conditions/",
+                    "PRIVACY_POLICY": "https://diceytech.co.uk/privacy-policy/",
+                    "INFO_EMAIL": "contact@diceytech.co.uk",
                 },
             },
         },
