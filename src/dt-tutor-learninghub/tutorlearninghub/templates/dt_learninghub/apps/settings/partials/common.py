@@ -1,6 +1,6 @@
 SECRET_KEY = "{{ DT_LEARNINGHUB_SECRET_KEY }}"
 ALLOWED_HOSTS = [
-    "classroom",
+    "learning",
     "{{ DT_LEARNINGHUB_HOST }}",
     "{{ LMS_HOST }}",
     "{{ MFE_HOST }}"
@@ -78,3 +78,4 @@ EDX_DRF_EXTENSIONS = {
     'OAUTH2_USER_INFO_URL': '{% if ENABLE_HTTPS %}https{% else %}http{% endif %}://{{ LMS_HOST }}/oauth2/user_info',
 }
 
+CMS_BASE_URL = "http://cms:8000"
