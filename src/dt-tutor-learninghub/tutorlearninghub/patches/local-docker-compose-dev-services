@@ -1,6 +1,6 @@
 dt_learninghub:
   environment:
-    DJANGO_SETTINGS_MODULE: classrooms.settings.tutor.development
+    DJANGO_SETTINGS_MODULE: learninghub.settings.tutor.development
   command: python3 manage.py runserver 0.0.0.0:8180
   ports:
     - "8180:8180"

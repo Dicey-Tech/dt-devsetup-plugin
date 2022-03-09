@@ -14,16 +14,16 @@ ENV PATH "/openedx/venv/bin:$PATH"
 RUN pip install setuptools==44.1.0 pip==20.3.4 wheel==0.37.0
 
 # Install learninghub
-ARG LEARNINGHUB_REPOSITORY=https://github.com/Dicey-Tech/dt-classroom.git
+ARG LEARNINGHUB_REPOSITORY=https://github.com/Dicey-Tech/dt-backend-services.git
 ARG LEARNINGHUB_VERSION={{ OPENEDX_COMMON_VERSION }}
-RUN mkdir -p /openedx/dt-classroom && \
-    git clone https://github.com/Dicey-Tech/dt-classroom --branch main --depth 1 /openedx/dt-classroom
-# --branch {{ OPENEDX_COMMON_VERSION }}
-WORKDIR /openedx/dt-classroom
+RUN mkdir -p /openedx/dt-backend-services && \
+    git clone ${LEARNINGHUB_REPOSITORY} --branch main --depth 1 /openedx/dt-backend-services
+# --branch ${LEARNINGHUB_VERSION}
+WORKDIR /openedx/dt-backend-services/dt-learninghub
 
 # Setup empty yml config file, which is required by production settings
 RUN echo "{}" > /openedx/config.yml
-ENV CLASSROOM_CFG /openedx/config.yml
+ENV LEARNINGHUB_CFG /openedx/config.yml
 
 # python requirements
 RUN pip3 install -r requirements/production.txt
@@ -40,11 +40,11 @@ RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 CMD uwsgi \
-    --static-map /static=/openedx/dt-classroom/classrooms/assets \
+    --static-map /static=/openedx/dt-backend-services/dt-learninghub/learninghub/assets \
     --http 0.0.0.0:8000 \
     --thunder-lock \
     --single-interpreter \
     --enable-threads \
     --processes=2 \
     --buffer-size=8192 \
-    --wsgi-file classrooms/wsgi.py
+    --wsgi-file learninhub/wsgi.py

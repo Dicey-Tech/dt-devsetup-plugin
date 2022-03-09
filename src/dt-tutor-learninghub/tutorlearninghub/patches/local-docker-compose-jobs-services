@@ -1,7 +1,7 @@
 dt_learninghub-job:
   image: {{ DT_LEARNINGHUB_DOCKER_IMAGE }}
   environment:
-    DJANGO_SETTINGS_MODULE: classrooms.settings.tutor.production
+    DJANGO_SETTINGS_MODULE: learninhub.settings.tutor.production
   volumes:
-    - ../plugins/dt_learninghub/apps/settings/tutor:/openedx/dt-classroom/classrooms/settings/tutor:ro
+    - ../plugins/dt_learninghub/apps/settings/tutor:/openedx/dt-backend-services/dt-learninghub/learninghub/settings/tutor:ro
   depends_on: {{ [("lms", RUN_LMS), ("mysql", RUN_MYSQL)]|list_if }}
