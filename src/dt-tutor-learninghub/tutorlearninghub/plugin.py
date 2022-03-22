@@ -5,7 +5,6 @@ import pkg_resources
 from .__about__ import __version__
 
 templates = pkg_resources.resource_filename("tutorlearninghub", "templates")
-#DT_LEARNINGHUB_PORT ="8180"
 
 config = {
     "add": {
