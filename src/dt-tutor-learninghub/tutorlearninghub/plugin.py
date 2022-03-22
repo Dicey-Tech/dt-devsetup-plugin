@@ -5,6 +5,7 @@ import pkg_resources
 from .__about__ import __version__
 
 templates = pkg_resources.resource_filename("tutorlearninghub", "templates")
+#DT_LEARNINGHUB_PORT ="8180"
 
 config = {
     "add": {
@@ -14,6 +15,7 @@ config = {
         "OAUTH2_SECRET_SSO": "{{ 8|random_string }}",
     },
     "defaults": {
+        "PORT": "8180",
         "VERSION": __version__,
         "DOCKER_IMAGE": "{{ DOCKER_REGISTRY }}diceytech/dt-learninghub:{{ DT_LEARNINGHUB_VERSION }}",
         "HOST": "learninghub.{{ LMS_HOST }}",
@@ -34,7 +36,7 @@ config = {
                     "CLASSROOM_BASE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DT_LEARNINGHUB_HOST }}",
                 },
                 "development": {
-                    "CLASSROOM_BASE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DT_LEARNINGHUB_HOST }}:8180",
+                    "CLASSROOM_BASE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DT_LEARNINGHUB_HOST }}:{{ DT_LEARNINGHUB_PORT}}",
                 },
             },
         },
@@ -49,7 +51,7 @@ config = {
                     "CLASSROOM_MFE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://apps.{{ LMS_HOST }}/{{ DT_LEARNINGHUB_MFE_APP['name'] }}",
                 },
                 "development": {
-                    "CLASSROOM_BASE_URL": "http://{{ DT_LEARNINGHUB_HOST }}:{{DT_LEARNINGHUB_DASHBOARD_MFE_APP['port']}}",
+                    "CLASSROOM_BASE_URL": "http://{{ DT_LEARNINGHUB_HOST }}:{{DT_LEARNINGHUB_PORT}}",
                     "CLASSROOM_MFE_URL": "http://apps.{{ LMS_HOST }}:{{ DT_LEARNINGHUB_MFE_APP['port'] }}/{{ DT_LEARNINGHUB_MFE_APP['name'] }}",
                 },
             },
