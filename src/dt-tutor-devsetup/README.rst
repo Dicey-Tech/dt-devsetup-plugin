@@ -24,14 +24,15 @@ This software is licensed under the terms of the AGPLv3.
 
 TODO
 Config.yml
-- disable forum
-- use 1 uswgi worker
+- use 1 uswgi worker by default
 
-Run with: tutor dev exec dt_classroom ./manage.py shell_plus --notebook
+Run with: tutor dev exec dt_learninghub ./manage.py shell_plus --notebook
 
 Scripts
 - switch outline
+Seed data
 - generate some users
+- Add enterprise customers (2)
 - Add Third-party authentication -> Provider Configuration (OAuth)
 
 Switch between nightly and release builds (or any defined environment)
