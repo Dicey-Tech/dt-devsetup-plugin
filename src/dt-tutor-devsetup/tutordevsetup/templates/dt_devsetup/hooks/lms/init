@@ -3,3 +3,10 @@
 {% else %}
 ./manage.py lms waffle_delete --flags user_authn.redirect_to_microfrontend
 {% endif %}
+
+# Modify users created with an incorrect email and that might clash with the newly created users
+./manage.py lms shell -c \
+    "from django.contrib.auth import get_user_model;\
+    get_user_model().objects.filter(username='{{ DT_DEVSETUP_ENTERPRISE_USER }}').exclude(email='{{ DT_DEVSETUP_ENTERPRISE_USER }}@openedx').update(email='{{ DT_DEVSETUP_ENTERPRISE_USER }}@openedx')"
+
+./manage.py lms manage_user enterprise_worker {{ DT_DEVSETUP_ENTERPRISE_USER }}@openedx --staff --superuser --unusable-password

@@ -9,6 +9,7 @@ templates = pkg_resources.resource_filename("tutordevsetup", "templates")
 config = {
     "defaults": {
         "VERSION": __version__,
+        "ENTERPRISE_USER": "enterprise_worker",
         "AUTHN_MFE_APP": {
             "name": "auth",
             "port": 1999,

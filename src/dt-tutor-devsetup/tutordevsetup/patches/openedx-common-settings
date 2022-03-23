@@ -1,4 +1,3 @@
-TIME_ZONE = "Europe/London"
 COURSE_MODE_DEFAULTS = {
     "bulk_sku": None,
     "currency": "gbp",
@@ -11,6 +10,9 @@ COURSE_MODE_DEFAULTS = {
     "suggested_prices": "",
 }
 
+ENTERPRISE_ALL_SERVICE_USERNAMES = ["{{ DT_DEVSETUP_ENTERPRISE_USER }}"]
+ENTERPRISE_SERVICE_WORKER_USERNAME = "{{ DT_DEVSETUP_ENTERPRISE_USER }}"
+
 FEATURES["CERTIFICATES_INSTRUCTOR_GENERATION"] = True
 FEATURES["ENABLE_COURSE_HOME_REDIRECT"] = True
 FEATURES["ENABLE_THIRD_PARTY_AUTH"] = True
@@ -18,6 +20,8 @@ FEATURES["ORGANIZATIONS_APP"] = True
 FEATURES["ENABLE_PREREQUISITE_COURSES"] = True
 FEATURES["MILESTONES_APP"] = True
 FEATURES["PREVENT_CONCURRENT_LOGINS"] = False
+
+TIME_ZONE = "Europe/London"
 
 ################# Settings for brand logos. #################
 LOGO_URL = "https://github.com/Dicey-Tech/brand-diceytech/raw/master/logo.svg"
