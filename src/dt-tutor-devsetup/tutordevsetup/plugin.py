@@ -24,12 +24,6 @@ config = {
                 },
             },
         },
-        "GRADEBOOK_MFE_APP": {
-            "name": "gradebook",
-            "port": 1994,
-            "repository": "http://github.com/Dicey-Tech/frontend-app-gradebook",
-            "version": "develop",
-        }
     }
 }
 
