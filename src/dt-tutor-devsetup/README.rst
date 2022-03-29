@@ -33,8 +33,9 @@ Scripts
 Seed data
 - generate some users
 - Add enterprise customers (2)
+    - seed_enterprise_devstack_data
 - Add Third-party authentication -> Provider Configuration (OAuth)
 
 Switch between nightly and release builds (or any defined environment)
-- set the rc file 
-- 
+- set the rc file
+-

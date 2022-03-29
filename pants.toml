@@ -1,11 +1,29 @@
 [GLOBAL]
-pants_version = "2.8.1rc1"
+pants_version = "2.9.0"
 
 backend_packages = [
   "pants.backend.python",
   "pants.backend.python.lint.black",
+  "pants.backend.python.lint.flake8",
   "pants.backend.python.lint.isort",
 ]
 
 [anonymous-telemetry]
 enabled = false
+
+[source]
+root_patterns = ["/"]
+
+[python-bootstrap]
+search_path = ["<PYENV>", "<PATH>"]
+
+[python-infer]
+string_imports = true
+
+[black]
+version = "black==22.1.0"
+lockfile = "lockfiles/black.txt"
+
+[flake8]
+version = "flake8==4.0.1"
+lockfile = "lockfiles/flake8.txt"
