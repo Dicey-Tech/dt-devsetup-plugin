@@ -15,6 +15,8 @@ config = {
     },
     "defaults": {
         "PORT": "8180",
+        # Fix for Dicey-Tech/dt-tutor-plugins#3 - Override this config value in production
+        "CLASSROOM_MFE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://apps.{{ LMS_HOST }}/{{ DT_LEARNINGHUB_MFE_APP['name'] }}",
         "VERSION": __version__,
         "DOCKER_IMAGE": "{{ DOCKER_REGISTRY }}diceytech/dt-learninghub:{{ DT_LEARNINGHUB_VERSION }}",
         "HOST": "learninghub.{{ LMS_HOST }}",
@@ -47,7 +49,7 @@ config = {
             "env": {
                 "production": {
                     "CLASSROOM_BASE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DT_LEARNINGHUB_HOST }}",
-                    "CLASSROOM_MFE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://apps.{{ LMS_HOST }}/{{ DT_LEARNINGHUB_MFE_APP['name'] }}",
+                    "CLASSROOM_MFE_URL": "{{ DT_LEARNINGHUB_CLASSROOM_MFE_URL }}",
                 },
                 "development": {
                     "CLASSROOM_BASE_URL": "http://{{ DT_LEARNINGHUB_HOST }}:{{DT_LEARNINGHUB_PORT}}",
