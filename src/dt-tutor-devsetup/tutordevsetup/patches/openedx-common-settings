@@ -14,7 +14,6 @@ ENTERPRISE_ALL_SERVICE_USERNAMES = ["{{ DT_DEVSETUP_ENTERPRISE_USER }}"]
 ENTERPRISE_SERVICE_WORKER_USERNAME = "{{ DT_DEVSETUP_ENTERPRISE_USER }}"
 
 FEATURES["CERTIFICATES_INSTRUCTOR_GENERATION"] = True
-FEATURES["ENABLE_COURSE_HOME_REDIRECT"] = True
 FEATURES["ENABLE_THIRD_PARTY_AUTH"] = True
 FEATURES["ORGANIZATIONS_APP"] = True
 FEATURES["ENABLE_PREREQUISITE_COURSES"] = True
@@ -26,7 +25,7 @@ TIME_ZONE = "Europe/London"
 ################# Settings for brand logos. #################
 LOGO_URL = "https://github.com/Dicey-Tech/brand-diceytech/raw/master/logo.svg"
 LOGO_URL_PNG = (
-    "https://3ducate-marketing.s3-eu-west-1.amazonaws.com/Dicey_Tech_Make_and_Learn.png"
+    "https://raw.githubusercontent.com/Dicey-Tech/brand-diceytech/master/logo.png"
 )
 LOGO_TRADEMARK_URL = (
     "https://github.com/Dicey-Tech/brand-diceytech/raw/master/logo-trademark.svg"
