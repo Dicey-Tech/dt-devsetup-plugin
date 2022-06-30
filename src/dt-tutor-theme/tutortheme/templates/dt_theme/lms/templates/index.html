@@ -1,0 +1,75 @@
+<%page expression_filter="h"/>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.urls import reverse
+
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<head>
+<!-- McDaniel Oct-2018: add the Bootstrap library, unless it's already included from webpack -->
+% if not uses_bootstrap:
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+% endif
+</head>
+<main id="main" aria-label="Content" tabindex="-1">
+  <section class="home">
+    <header>
+      <div class="header-row">
+        <div class="header-col text-wrapper font-dark-magenta">
+          <img src="${static.url("educate-theme/images/3ducateLogo.svg")}" alt="3Ducate Logo" />
+          <h1>
+            <span>The Home of Project Based Learning</span>
+          </h1>
+          <h3>Build skills for tomorrow by making the things you are curious about today.</h3>
+        </div>
+        <div class="header-col image-wrapper">
+          <div class="header-image">
+            <img src="${static.url("educate-theme/images/3DUCATE-hero-banner_transparent_background.png")}" alt="${_(" {platform_name} Home Page").format(platform_name=static.get_platform_name())}" />
+          </div>
+        </div>
+      </div>
+      <!-- <div class="outer-wrapper">
+        <div class="title">
+          <div class="heading-group">
+            <%include file="${static.get_template_path(relative_path='index_overlay.html')}"/>
+            </div>
+          </div>
+          <%include file="index_promo_video.html" />
+
+        </div> -->
+
+    </header>
+
+    <%include file="${courses_list}" />
+
+    </section>
+</main>
+
+% if show_homepage_promo_video:
+  <section id="video-modal" class="modal home-page-video-modal video-modal">
+    <div class="inner-wrapper">
+      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+% endif
+
+<%block name="js_extra">
+   <script type="text/javascript">
+    $(window).load(function () {
+      if (getParameterByName('next')) {
+        $('#login').trigger("click");
+      }
+    })
+  </script>
+</%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function () { $('#signup_action').trigger("click"); });
+</script>
+% endif

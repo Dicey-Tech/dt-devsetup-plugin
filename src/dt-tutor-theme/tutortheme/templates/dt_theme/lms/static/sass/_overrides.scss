@@ -1,0 +1,356 @@
+// TODO Separate into different with self-explanatory names
+
+@import "header";
+@import "dashboard";
+
+.content-wrapper {
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  //color: $very_dark_magenta;
+  font-family: inherit;
+}
+
+.home > header {
+  max-width: 1376px;
+  margin: auto;
+  background-color: transparent;
+  background-size: cover;
+  box-shadow: none;
+
+  .header-row {
+    width: 100%;
+    display: flex;
+    @media only screen and (max-width: 600px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .header-col {
+    padding-left: 10px;
+    &.text-wrapper {
+      flex: 1;
+      margin: auto;
+
+      img {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      h1 {
+        font-family: "Quicksand", Sans-serif;
+        font-size: 45px;
+        letter-spacing: -2.6px;
+        font-weight: 600;
+      }
+
+      span {
+        display: inline-block;
+        padding: 0.2em 0;
+      }
+
+      h3 {
+        font-size: 25px;
+        line-height: normal;
+        font-weight: 300;
+        font-family: inherit;
+        text-align: center;
+      }
+    }
+
+    &.image-wrapper {
+      flex: 2 0 0%;
+    }
+  }
+  .header-image {
+    //   // background: url("../images/Classroom.png");
+    //   background-size: cover;
+    //   background-position: center;
+    //   height: 100%;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .mobile-menu .mobile-nav-link a {
+    color: $vivid_cerise;
+    font: inherit;
+  }
+
+  .global-header .hamburger-menu {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .course-search {
+    margin: 20px 2px 0 20px !important;
+  }
+}
+
+.courses-container .courses .course {
+  border: 0;
+  border-bottom: 1px solid $usc_gold;
+  box-shadow: 0px 10px 26px -18px rgba($usc_gold, 1);
+
+  &:hover {
+    background: $white;
+    border: 0;
+    box-shadow: 0 1px 4px 0 rgba($usc_gold, 0.4);
+  }
+
+  .course-info {
+    height: 100px;
+  }
+
+  .course-image {
+    .cover-image {
+      height: 260px;
+
+      &::before {
+        background-color: $dark_cyan;
+        height: 235px;
+      }
+
+      .learn-more {
+        border-radius: 5px;
+        top: 105px;
+      }
+    }
+  }
+}
+
+.course-info {
+  header.course-profile {
+    // SB 09/04/2020
+    // Added to fix an issue with the UI https://www.notion.so/diceytech/38d7134cd22149bab2c29afbe0b5279c
+    height: 100%;
+    padding-top: 0px;
+    border-bottom: 0px;
+
+    .intro-inner-wrapper {
+      border: 0px;
+
+      .intro {
+        .main-cta {
+          strong,
+          a.find-courses,
+          a.register,
+          a.add-to-cart {
+            border-radius: 5px;
+          }
+
+          > .heading-group h1 {
+            color: $very_dark_magenta !important;
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    font-family: inherit;
+  }
+}
+
+.login-register .action-primary {
+  background: $vivid_cerise;
+}
+
+.wrapper-footer {
+  box-shadow: none;
+  border-top: none;
+  padding: 25px 10px 30px 10px;
+  background: #fff;
+  clear: both;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper-footer footer#footer-openedx .colophon .nav-colophon li a {
+  color: $vivid_cerise;
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 2px solid $vivid_cerise;
+  }
+}
+
+/*Vertical Sliding*/
+.slidingVertical {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+}
+.slidingVertical span {
+  animation: topToBottom 15s linear infinite 0s;
+  -ms-animation: topToBottom 15s linear infinite 0s;
+  -webkit-animation: topToBottom 15s linear infinite 0s;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.slidingVertical span:nth-child(2) {
+  animation-delay: 2.5s;
+  -ms-animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
+}
+.slidingVertical span:nth-child(3) {
+  animation-delay: 5s;
+  -ms-animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+.slidingVertical span:nth-child(4) {
+  animation-delay: 7.5s;
+  -ms-animation-delay: 7.5s;
+  -webkit-animation-delay: 7.5s;
+}
+.slidingVertical span:nth-child(5) {
+  animation-delay: 10s;
+  -ms-animation-delay: 10s;
+  -webkit-animation-delay: 10s;
+}
+.slidingVertical span:nth-child(6) {
+  animation-delay: 12.5s;
+  -ms-animation-delay: 12.5s;
+  -webkit-animation-delay: 12.5s;
+}
+
+/*topToBottom Animation*/
+@-moz-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -moz-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(0px);
+  }
+  25% {
+    opacity: 0;
+    -moz-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  25% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -ms-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -ms-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -ms-transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    -ms-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  ol {
+    display: flex;
+    li {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+.social-icons {
+  i {
+    color: $primary;
+    transition: all 1s;
+    cursor: pointer;
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+//.m-20{
+//margin: 20px 2px 0 20px !important;
+//}
+// mobile-css
+
+.certificate-card .card-logo {
+  height: 88px;
+}

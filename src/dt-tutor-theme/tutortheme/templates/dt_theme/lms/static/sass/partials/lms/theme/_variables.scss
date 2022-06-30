@@ -1,0 +1,41 @@
+// SASS overrides
+
+// Theme colors
+//
+$red: #d9534f;
+$usc_gold: #ffc803;
+$dark_cyan: #0f7087;
+$very_dark_magenta: #440641;
+$bright_turquoise: #0cebdc;
+$vivid_cyan: #23c9ff;
+$pale_violet: #a18fff;
+$vivid_cerise: #d9167e;
+$fern: #61ce70;
+$white: #ffffff;
+$blue: #022260;
+$primary: $vivid_cerise;
+$secondary: $dark_cyan;
+
+$component-active-bg: $pale_violet;
+$border-color: $usc_gold;
+
+// Theme fonts
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Baloo 2", "Lato", "Quicksand", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-weight-normal: 600;
+
+$indigo: $vivid_cerise;
+
+.font-cerise {
+  color: $vivid_cerise;
+}
+.font-blue {
+  color: $blue;
+}
+.d-none {
+  display: none;
+}
+.font-dark-magenta {
+  color: $very_dark_magenta;
+}
+// Initialize the Open edX Bootstrap theme
+@import "edx-bootstrap/sass/open-edx/theme";

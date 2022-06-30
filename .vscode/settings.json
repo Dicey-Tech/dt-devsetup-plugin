@@ -3,6 +3,7 @@
     "conventionalCommits.scopes": [
         "devsetup",
         "learn",
-        "utils"
+        "utils",
+        "theme"
     ]
 }
