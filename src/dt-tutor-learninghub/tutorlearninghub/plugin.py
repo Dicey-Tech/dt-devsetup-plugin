@@ -43,9 +43,9 @@ config = {
         },
         "DASHBOARD_MFE_APP": {
             "name": "dashboard",
-            "repository": "https://github.com/Dicey-Tech/frontend-app-teacher-dashboard",
+            "repository": "https://github.com/Dicey-Tech/frontend-app-dashboard",
             "port": 8081,
-            "version": "develop",
+            "version": "master",
             "env": {
                 "production": {
                     "CLASSROOM_BASE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DT_LEARNINGHUB_HOST }}",
