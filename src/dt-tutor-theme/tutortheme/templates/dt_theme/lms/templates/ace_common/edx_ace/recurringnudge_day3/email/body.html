@@ -1,0 +1,56 @@
+{% raw %}
+{% extends 'ace_common/edx_ace/common/base_body.html' %}
+{% load i18n %}
+{% load django_markup %}
+
+{% block preview_text %}
+    {% if course_ids|length > 1 %}
+        {% filter force_escape %}
+        {% blocktrans trimmed %}
+            At {{ platform_name }}, we care about your success, and we're willing to take the risk of nudging you along.
+            Projects are your opportunity to fast forward your career.
+        {% endblocktrans %}
+        {% endfilter %}
+    {% else %}
+        {% filter force_escape %}
+        {% blocktrans trimmed %}
+            At {{ platform_name }}, we care about your success, and we're willing to take the risk of nudging you along.
+            The {{ course_name }} project is your opportunity to fast forward your career.
+        {% endblocktrans %}
+        {% endfilter %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation">
+    <tr>
+        <td>
+            <h1>{% trans "Boost your skills" as tmsg %}{{ tmsg | force_escape}}.</h1>
+
+            <p>
+                {% if course_ids|length > 1 %}
+                    {% blocktrans trimmed asvar tmsg %}
+                        At {platform_name}, we care about your success, and we're willing to take the risk of nudging you along.
+                        Projects are your opportunity to fast forward your career.
+                    {% endblocktrans %}
+                    {% interpolate_html tmsg start_strong='<strong>'|safe end_strong='</strong>'|safe course_name=course_name|force_escape|safe platform_name=platform_name|force_escape|safe %}
+                {% else %}
+                    {% blocktrans trimmed asvar tmsg %}
+                        At {platform_name}, we care about your success, and we're willing to take the risk of nudging you along.
+                        The {start_strong}{course_name}{end_strong} project is your opportunity to fast forward your career.
+                    {% endblocktrans %}
+                    {% interpolate_html tmsg start_strong='<strong>'|safe end_strong='</strong>'|safe course_name=course_name|force_escape|safe platform_name=platform_name|force_escape|safe %}
+                {% endif %}
+            </p>
+
+            {% filter force_escape %}
+                {% blocktrans asvar course_cta_text %}Jump back in{% endblocktrans %}
+            {% endfilter %}
+            {% include "ace_common/edx_ace/common/return_to_course_cta.html" with course_cta_text=course_cta_text%}
+
+            {% include "ace_common/edx_ace/common/upsell_cta.html"%}
+        </td>
+    </tr>
+</table>
+{% endblock %}
+{% endraw %}

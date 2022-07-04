@@ -1,3 +1,4 @@
+{% raw %}
 ## mako
 <%page expression_filter="h"/>
 <%namespace name='static' file='static_content.html'/>
@@ -41,3 +42,4 @@ displayname = get_enterprise_learner_generic_name(request) or username
         <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="${reverse('logout')}" role="menuitem"><i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 8px;"></i>${_("Sign Out")}</a></div>
     </div>
 </div>
+{% endraw %}

@@ -29,6 +29,11 @@ hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
     ],
 )
 
+# Force the rendering of scss files, even though they are included in a "partials" directory
+hooks.Filters.ENV_PATTERNS_INCLUDE.add_item(
+    r"dt_theme/lms/static/sass/partials/lms/theme/"
+)
+
 # Load all configuration entries
 hooks.Filters.CONFIG_DEFAULTS.add_items(
     [(f"DT_THEME_{key}", value) for key, value in config["defaults"].items()]

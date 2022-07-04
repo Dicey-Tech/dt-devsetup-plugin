@@ -1,3 +1,4 @@
+{% raw %}
 <%page expression_filter="h"/>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
@@ -19,7 +20,7 @@ from openedx.core.djangolib.markup import HTML, Text
     <header>
       <div class="header-row">
         <div class="header-col text-wrapper font-dark-magenta">
-          <img src="${static.url("educate-theme/images/3ducateLogo.svg")}" alt="3Ducate Logo" />
+          <img src="${static.url("dt-theme/images/3ducateLogo.svg")}" alt="3Ducate Logo" />
           <h1>
             <span>The Home of Project Based Learning</span>
           </h1>
@@ -27,7 +28,7 @@ from openedx.core.djangolib.markup import HTML, Text
         </div>
         <div class="header-col image-wrapper">
           <div class="header-image">
-            <img src="${static.url("educate-theme/images/3DUCATE-hero-banner_transparent_background.png")}" alt="${_(" {platform_name} Home Page").format(platform_name=static.get_platform_name())}" />
+            <img src="${static.url("dt-theme/images/3DUCATE-hero-banner_transparent_background.png")}" alt="${_(" {platform_name} Home Page").format(platform_name=static.get_platform_name())}" />
           </div>
         </div>
       </div>
@@ -73,3 +74,4 @@ from openedx.core.djangolib.markup import HTML, Text
   $(window).load(function () { $('#signup_action').trigger("click"); });
 </script>
 % endif
+{% endraw %}

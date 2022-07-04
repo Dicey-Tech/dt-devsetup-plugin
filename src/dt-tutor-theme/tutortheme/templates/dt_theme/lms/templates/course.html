@@ -1,3 +1,4 @@
+{% raw %}
 <%def name="online_help_token()"><% return "course" %></%def>
 <%namespace name='static' file='static_content.html'/>
 <%!
@@ -48,3 +49,4 @@ from six import text_type
 <%static:require_module_async module_name="js/dateutil_factory" class_name="DateUtilFactory">
     DateUtilFactory.transform(iterationKey=".localized_datetime");
 </%static:require_module_async>
+{% endraw %}

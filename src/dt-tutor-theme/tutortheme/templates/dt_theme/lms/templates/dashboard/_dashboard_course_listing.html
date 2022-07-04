@@ -1,3 +1,4 @@
+{% raw %}
 <%page args="course_overview, enrollment, entitlement, entitlement_session, course_card_index, is_unfulfilled_entitlement, is_fulfilled_entitlement, entitlement_available_sessions, entitlement_expiration_date, entitlement_expired_at, show_courseware_link, cert_status, can_refund_entitlement, can_unenroll, credit_status, show_email_settings, course_mode_info, is_paid_course, verification_status, course_requirements, dashboard_index, share_settings, related_programs, display_course_modes_on_dashboard, show_consent_link, enterprise_customer_name, resume_button_url, partner_managed_enrollment" expression_filter="h"/>
 
 <%!
@@ -484,3 +485,4 @@ from lms.djangoapps.experiments.utils import UPSELL_TRACKING_FLAG
 
     </%static:require_module_async>
 %endif
+{% endraw %}

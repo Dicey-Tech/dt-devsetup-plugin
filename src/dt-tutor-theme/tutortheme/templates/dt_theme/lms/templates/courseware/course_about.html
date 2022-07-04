@@ -1,3 +1,4 @@
+{% raw %}
 <%page expression_filter="h"/>
 <%namespace name='static' file='../static_content.html'/>
 <%!
@@ -77,19 +78,19 @@ from six import string_types
             <a href="${course_target}">
           %endif
 
-          <span class="register disabled">${_("You are enrolled in this course")}</span>
+          <span class="register disabled">${_("You are enrolled in this project")}</span>
 
           %if show_courseware_link:
-            <strong>${_("View Course")}</strong>
+            <strong>${_("View Project")}</strong>
             </a>
           %endif
 
         % elif is_course_full:
           <span class="register disabled">
-            ${_("Course is full")}
+            ${_("Project is full")}
           </span>
         % elif invitation_only and not can_enroll:
-          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+          <span class="register disabled">${_("Enrollment in this project is by invitation only")}</span>
         ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
         ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
         ## so that they can register and become a real user that can enroll.
@@ -98,7 +99,7 @@ from six import string_types
         %elif allow_anonymous:
           %if show_courseware_link:
             <a href="${course_target}">
-            <strong>${_("View Course")}</strong>
+            <strong>${_("View Project")}</strong>
             </a>
           %endif
         %else:
@@ -113,7 +114,7 @@ from six import string_types
               href_class = "register"
           %>
           <a href="${reg_href}" class="${href_class}">
-            ${_("Enroll Now")}
+            ${_("Start Now")}
           </a>
           <div id="register_error"></div>
         %endif
@@ -289,3 +290,4 @@ from six import string_types
 <%static:require_module_async module_name="js/dateutil_factory" class_name="DateUtilFactory">
     DateUtilFactory.transform(iterationKey=".localized_datetime");
 </%static:require_module_async>
+{% endraw %}

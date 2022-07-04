@@ -1,3 +1,4 @@
+{% raw %}
 ## coding=utf-8
 
 ## This is the main Mako template that all page templates should include.
@@ -142,10 +143,11 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
   % if google_site_verification_id:
     <meta name="google-site-verification" content="${google_site_verification_id}" />
   % endif
-  <!-- 3DUCATE -->
+  {{ patch("dt-theme-main-head") }}
+  <!-- Dicey Tech -->
   <meta name="title" content="Learn | Dicey Tech" />
-  <meta name="description" content="Bringing industries to life in education to ensure students learn the skills to thrive in the future of work and businesses have sustainable talent pipelines">
-  <meta property="og:image" content="${static.url("educate-theme/images/DiceyTech-Make-and-Learn.svg")}" />
+  <meta name="description" content="The talent marketplace helping young people showcase skills, gain experience, and connect with top employers.">
+  <meta property="og:image" content="${static.url("dt-theme/images/DiceyTech-Make-and-Learn.svg")}" />
   <script
       src="https://browser.sentry-cdn.com/5.26.0/bundle.min.js"
       integrity="sha384-VGljl8BTZL6Py4DmlOaYmfkOwp8mD3PrmD2L+fN446PZpsrIHuDhX7mnV/L5KuNR"
@@ -155,7 +157,6 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
   <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=625ec899-64c9-4578-b7ea-a5e12d949ebf"> </script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Lato:wght@700&display=swap" rel="stylesheet">
-  <!-- end of 3DUCATE -->
 
   <!-- Hotjar Tracking Code for http://learn.diceytech.co.uk -->
   <script>
@@ -168,6 +169,10 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
+
+  <!-- Plausible -->
+  <script defer data-domain="learn.diceytech.co.uk" src="https://plausible.io/js/plausible.js"></script>
+  <!-- end of Dicey Tech -->
 
   <meta name="openedx-release-line" content="${RELEASE_LINE}" />
 
@@ -245,3 +250,4 @@ from common.djangoapps.pipeline_mako import render_require_js_path_overrides
     next=urlquote_plus(login_redirect_url if login_redirect_url else request.path)
   ) if (login_redirect_url or (request and not request.path.startswith("/logout"))) else ""
 }</%def>
+{% endraw %}
