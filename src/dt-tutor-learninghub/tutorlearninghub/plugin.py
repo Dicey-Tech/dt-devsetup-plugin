@@ -50,6 +50,7 @@ config = {
                 "production": {
                     "CLASSROOM_BASE_URL": "{{ 'https' if ENABLE_HTTPS else 'http' }}://{{ DT_LEARNINGHUB_HOST }}",
                     "CLASSROOM_MFE_URL": "{{ DT_LEARNINGHUB_CLASSROOM_MFE_URL }}",
+                    "EXPLORE_COURSES_URL": "https://diceytech.co.uk/projects/",
                 },
                 "development": {
                     "CLASSROOM_BASE_URL": "http://{{ DT_LEARNINGHUB_HOST }}:{{DT_LEARNINGHUB_PORT}}",
