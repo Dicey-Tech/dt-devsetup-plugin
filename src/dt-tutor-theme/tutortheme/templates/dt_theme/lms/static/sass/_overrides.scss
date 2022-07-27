@@ -144,6 +144,10 @@ h6,
     .intro-inner-wrapper {
       border: 0px;
 
+      .media .hero .play-intro::after {
+        content: "";
+      }
+
       .intro {
         .main-cta {
           strong,
