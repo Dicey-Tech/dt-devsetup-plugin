@@ -14,7 +14,7 @@ config = {
             "name": "auth",
             "port": 1999,
             "repository": "https://github.com/Dicey-Tech/frontend-app-authn",
-            "version": "bbrsofiane/get-additional-demograhphics-data",
+            "version": "master",
             "env": {
                 "production": {
                     "DISABLE_ENTERPRISE_LOGIN": "true",
