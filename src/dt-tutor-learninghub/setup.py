@@ -40,7 +40,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.5",
     install_requires=["tutor"],
-    entry_points={"tutor.plugin.v0": ["dt_learninghub = tutorlearninghub.plugin"]},
+    entry_points={"tutor.plugin.v1": ["dt_learninghub = tutorlearninghub.plugin"]},
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
