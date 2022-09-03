@@ -1,6 +1,7 @@
 AUTHN_MICROFRONTEND_URL = "{{ "https" if ENABLE_HTTPS else "http" }}://{{ MFE_HOST }}/{{ DT_DEVSETUP_AUTHN_MFE_APP["name"] }}"
 AUTHN_MICROFRONTEND_DOMAIN = "{{ MFE_HOST }}/{{ DT_DEVSETUP_AUTHN_MFE_APP["name"] }}"
 
+
 COURSE_CATALOG_URL_ROOT = "{{ "https" if ENABLE_HTTPS else "http" }}://{{ DISCOVERY_HOST }}"
 COURSE_CATALOG_API_URL = f"{COURSE_CATALOG_URL_ROOT}/api/v1"
 
@@ -11,3 +12,6 @@ SYSTEM_WIDE_ROLE_CLASSES = SYSTEM_WIDE_ROLE_CLASSES + [
     'system_wide_roles.SystemWideRoleAssignment',
     'enterprise.SystemWideEnterpriseUserRoleAssignment',
 ]
+
+# ZAPIER_REGISTRATION_WEBHOOK = "https://hooks.zapier.com/hooks/catch/<account>/<webhook>/"
+# ZAPIER_ENROLLMENT_WEBHOOK = "https://hooks.zapier.com/hooks/catch/<account>/<webhook>/"

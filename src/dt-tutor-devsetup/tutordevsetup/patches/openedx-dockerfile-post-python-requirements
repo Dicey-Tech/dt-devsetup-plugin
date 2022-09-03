@@ -1,2 +1,3 @@
 RUN pip install xblock-problem-builder
 RUN pip install git+https://github.com/open-craft/xblock-activetable.git
+RUN pip install git+https://github.com/eduNEXT/openedx-events-2-zapier.git
